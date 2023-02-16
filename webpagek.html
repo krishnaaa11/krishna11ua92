@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+    <head>
+          <style>
+    body {
+      background-color: #333;
+    }
+            .topnav {
+  background-color: #4f90ae;
+  overflow: hidden;
+}
+
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+.topnav a.active {
+  background-color:#333;
+  color: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.cart-btn {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#cart {
+  position: relative;
+  font-size: 2rem;
+  cursor: pointer;
+  margin: 1em 4em 0 0;
+}
+
+.cart-quantity {
+  color: white;
+  background-color: red;
+  padding: .2em .3em;
+  position: absolute;
+  margin: .8em 7.5em 0 0;
+  right: 0;
+  border: solid 2px red;
+  border-radius: 15px;
+  font-weight: bolder;
+}
+
+.items-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  margin-top: 1em
+  
+}
+
+.card {
+/*   width: 15rem; */
+  margin: 1em;
+  position: relative;
+  overflow: hidden; 
+  text-align: center
+}
+
+.card:hover .add-to-cart {
+  transform: translateX(0);
+}
+
+.product-image {
+  margin-bottom: 1em
+}
+
+.add-to-cart {
+  background-color: black;
+  color: white;
+  position: absolute;
+  right: 0;
+  top: 65%;
+  padding: .5em 1em; 
+  transform: translateX(300px);
+  transition: .5s ease;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: 1.2rem
+}
+
+.product-price {
+  padding-top: 1em;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.cart-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 2;
+  transform: translateX(-200%);
+  transition: .5s ease-out;
+  
+}
+
+.cart-modal {
+  height: 100vh;
+  width: 50%;
+  background-color: rgb(50,50,50);
+  float: right;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+#close-btn {
+  font-size: 1.5rem;
+  float: right;
+  margin: .5em 2em 0 0;
+  color: white;
+  cursor: pointer;
+}
+
+.cart-is-empty {
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1em;
+  display: none;
+  
+}
+
+.total {
+  text-align: center;
+  margin: 2em 0 2em 0;
+/*   display: none; */
+}
+
+.cart-total {
+  color: white;
+}
+
+.total-price {
+  color: white;
+  font-size: 2rem;
+  display: block;
+}
+
+.purchase-btn {
+  font-size: 1rem;
+  font-weight: bolder;
+  background-color: green;
+  color: white;
+  padding: 1em 2em;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin: 2em 0 1em 0;
+}
+
+.product-rows {
+  margin-top: 3em;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+.product-row {
+  display: flex;
+  align-items: center;
+}
+
+.cart-image {
+  width: 10rem;
+  margin: 1em;
+}
+
+.cart-price {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+.product-quantity {
+  width: 4rem;
+  font-size: 2rem;
+  margin-left: 3rem;
+}
+
+.remove-btn {
+  padding: 1em 2em;
+  background-color: red;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 3rem;
+  font-weight: bolder;
+  font-size: 1rem;
+}
+
+.remove-btn:active {
+  transform: translateY(5px);
+}
+
+@media (max-width: 1000px){
+  .cart-modal {
+    width: 100vw;
+  } 
+  
+  .product-row {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 2em;
+  }
+  
+  .remove-btn {
+    margin: 0
+  }
+  
+  .product-quantity {
+    margin: .5em 0 .5em 0
+  }
+}
+          </style>
+    </head>
+    <body>
+        <hr>
+        <center><img src="images/logo.jpg.webp"></center>
+    <hr>
+    <marquee style="width: 100%; background-color: aquamarine;font-size: larger;">GET THE LATEST ALBUMS ON SKY SOUNDS.</marquee>
+    <hr>
+    <center>
+      <div class="topnav">
+      <a class="active" href="homew1.html">HOME</a>
+      <a href="shop.html">SHOP</a>
+      <a href="contactw1.html">CONTACT</a>
+      <a href="aboutw1.html">ABOUT</a><p style="color: gold; font-weight: bolder;">*GODS GREATEST GIFT*</p>
+    </div>
+    
+  </center>
+  <br> <br>
+  <center>
+      <form class="search-form">
+        <input type="text" placeholder="search" style="height: 20px;border-radius: 10px;">
+        <button style="background-color: orange; border: 15px; border-radius: 10px;">search</button> 
+      </form>
+    </center>
+  <br> <br> <br> <br> <br>
+  <center>
+    <table border="2" height="100" weight="600">
+      <th><a href="retro90's.html"><button style="color: black; background-color: black;"><img src="images/RETRO 90'S cover.jpg" height="200" width="200"><p style="font-size: larger; font: bold; background-color: antiquewhite;">RETRO 90's</button></a></p></th>
+      <th><a href="classic.html"><button style="color: black; background-color: black;"><img src="images/classic 1 cover.jpg" height="200" width="200"><p style="font-size: larger; font: bold; background-color: antiquewhite;">CLASSIC</button></a></p></th>
+      <th><a href="hiphop.html"><button style="color: black; background-color: black;"><img src="images/hip hop cover.webp" height="200" width="250"><p style="font-size: larger; font: bold; background-color: antiquewhite;">HIP HOP</p></a></th>
+      <th><a href="pop music.html"><button style="color: black; background-color: black;"><img src="images/POP MUSIC COVER.jpg" height="200" width="200"><P style="font-size: larger; font: bold; background-color: antiquewhite;">POP MUSIC</P></a></th>
+      <th><a href="edm.html"><button style="color: black; background-color: black;"><img src="images/edm cover.jpg" height="200" width="200"><p style="font-size: larger; font: bold; background-color: antiquewhite;">EDM </p></a></th>
+
+    </table>
+</center>
+<br>
+<br>
+
+ 
+   
+ 
+  <main>
+      
+       
+ 
+ <!--  products  -->
+   <div class="items-container">
+     <div class="card-1 card">
+       <img class="product-image" src="images/Travis Scott Covers Man in Town, Talks Fashion & Style – The Fashionisto.jpg" alt="" height="200">
+         <button class="add-to-cart">TRAVIS SCOTT</button>
+           
+     </div>
+
+     
+     <div class="card-2 card">
+       <img class="product-image" src="images/Billie Eilish wallpaper by sheisbillieeilish - Download on ZEDGE™ _ d98e.jpg" alt="" height="200">
+       <button class="add-to-cart">BILLIE ELLISH</button>
+         
+     </div>
+     <div class="card-3 card">
+       <img class="product-image" src="images/dua lipa cover.jpeg" alt="" height="200">
+         <button class="add-to-cart">DUA LIPA</button>
+           
+     </div>
+     <div class="card-4 card">
+       <img class="product-image" src="images/𝑍𝑀 ♡.jpg" alt="" height="200">
+          <button class="add-to-cart">ZAYN</button>
+         
+     </div>
+     <div class="card-5 card">
+       <img class="product-image" src="images/THE WEEKND COVER.png" alt="the weeknd" height="200">
+       <button class="add-to-cart">THE WEEKND</button>
+     </div>
+    
+      <div class="card-6 card">
+        <img class="product-image" src="images/Post Malone Wallpaper 2.jpg" alt="the weeknd" height="200">
+        <button class="add-to-cart">POST MALONE</button>
+      </div>
+      <div class="card-6 card">
+        <img class="product-image" src="images/harry style.jpg" alt="the weeknd" height="200">
+        <button class="add-to-cart">HARRY STYLES</button>
+      </div>
+      <div class="card-6 card">
+        <img class="product-image" src="images/Kate Bush.jpg" alt="the weeknd" height="200">
+        <button class="add-to-cart">KATE BUSH</button>
+      </div>
+      <div class="card-6 card">
+        <img class="product-image" src="images/dababy.png" alt="the weeknd" height="200">
+        <button class="add-to-cart">DABABY</button>
+      </div>
+      <div class="card-6 card">
+        <img class="product-image" src="images/dj snaake.jpg" alt="the weeknd" height="200">
+        <button class="add-to-cart">DJ SNAKE</button>
+      </div>
+      <div class="card-6 card">
+        <img class="product-image" src="images/drake.jpg" alt="the weeknd" height="200">
+        <button class="add-to-cart">DRAKE</button>
+      </div>
+      <div class="card-6 card">
+        <img class="product-image" src="images/taylor.jpg" alt="the weeknd" height="200">
+        <button class="add-to-cart">TAYLOR SWIFT</button>
+      </div>
+      <div class="card-6 card">
+        <img class="product-image" src="images/xxx.jpg" alt="the weeknd" height="200">
+        <button class="add-to-cart">XXXTENTACION</button>
+      </div>
+      <div class="card-6 card">
+        <img class="product-image" src="images/marsh.jpg" alt="the weeknd" height="200">
+        <button class="add-to-cart">MARSHMELLOW</button>
+      </div>
+      <div class="card-6 card">
+        <img class="product-image" src="images/NF1.jpg" alt="the weeknd" height="200">
+        <button class="add-to-cart">NF</button>
+      </div>
+      <div class="card-6 card">
+        <img class="product-image" src="images/J COLE.jpg" alt="the weeknd" height="200">
+        <button class="add-to-cart">J COLE</button>
+      </div>
+      <div class="card-6 card">
+        <img class="product-image" src="images/PBC.jpg" alt="the weeknd" height="200">
+        <button class="add-to-cart">PLAYBOI CARTI</button>
+      </div>
+      <div class="card-6 card">
+        <img class="product-image" src="images/LIL UZI.jpg" alt="the weeknd" height="200">
+        <button class="add-to-cart">LIL UZI VERT</button>
+      </div>
+
+     </div>
+     
+    </div>
+    
+   </div>  
+      <!-- END EDMO HTML (Happy Coding!)-->
+  </main>
+  <hr color="blue">
+<hr color="blue">
+ <center>
+  <h1 style="font: bold italic small-caps 20px georgia;">OUR SPONSOR PARTNERS.</h1>
+  <img src="images/spotify logo.png" height="100"></a>
+  <img src="images/apple music logo.jpg" height="100">
+  <img src="images/soundcloud logo.jpg" height="100">
+  <img src="images/dolby logo.png" height="100">
+ </center>
+ <hr color="blue">
+ <hr color="blue">
+
+    
+  
+   
+   <script  src="webpage.js"></script>
+
+    
+    </body>
+</html>

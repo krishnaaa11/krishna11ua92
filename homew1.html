@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <head><style>
+      body { 
+        background-color: #333;
+      }
+      
+      .topnav {
+  background-color: #4f90ae;
+  overflow: hidden;
+}
+
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+.topnav a.active {
+  background-color:#333;
+  color: white;
+}
+      
+    </style>
+        <meta  name="viewport">
+        <title>home</title>
+       <link rel="stylesheet" href="stylew.css">
+        <body>
+          
+            <center><img style="text-align: right;" src="images/logo.jpg.webp" height="50" >
+                <h1>WELCOME TO SKY SOUNDS </h1></center>
+                <center>
+                  <div class="topnav">
+                  
+                  <a href="shop.html">SHOP</a>
+                  <a href="contactw1.html">CONTACT</a>
+                  <a href="aboutw1.html">ABOUT</a><p style="color: gold; font-weight: bolder;">*GODS GREATEST GIFT*</p>
+                </div>
+                
+              </center>
+                <hr>
+                <marquee style="background-color: lavender;" width="100%" direction="left" >
+                    get our most favourtie alumbs here!!!!
+                    </marquee>
+                    <hr>
+                    <br> <br> <br>
+                    <center>
+<div class="slideshow-container">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 7</div>
+      <img src="images/classic album cover.webp" height="500" width="500">
+      <div class="text">classic covers</div>
+    </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 7</div>
+      <img src="images/billie cover.jpg" height="500">
+      <div class="text" style="background-color: skyblue;">billiellish</div>
+    </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 7</div>
+      <img src="images/dua lipa cover.jpeg" height="500" width="500">
+      <div class="text" style="background-color: skyblue;">dua lipa</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">4 / 7</div>
+      <img src="images/hip hop cover.webp" height="500" width="500">
+      <div class="text" style="background-color: skyblue;">american rappers</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">5 / 7</div>
+      <img src="images/jackboys album.jpg" height="500" width="500">
+      <div class="text" style="background-color: skyblue;">jackboys</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">6 / 7</div>
+      <img src="images/kendrick album.png" height="500" width="500">
+      <div class="text" style="background-color: skyblue;">kendrick lamar</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">7 / 7</div>
+      <img src="images/juice wrld album.jpg" height="500" width="500">
+      <div class="text" style="background-color: skyblue;">juice wrld</div>
+    </div>
+</center>
+
+  <!-- The dots/circles -->
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+    <span class="dot" onclick="currentSlide(6)"></span>
+    <span class="dot" onclick="currentSlide(7)"></span>
+  </div>
+  <br>
+<br>
+<br>
+<br>
+
+<center>
+  <h2>CLICK ON YOUR FAVOURITE SLIDE...</h2>
+  <table border="2" height="100" weight="600">
+    <th><a href="retro90's.html"><button style="color: black; background-color: black;"><img src="images/RETRO 90'S cover.jpg" height="200" width="200"><p style="font-size: larger; font: bold; background-color: antiquewhite;">RETRO 90's</button></a></p></th>
+    <th><a href="classic.html"><button style="color: black; background-color: black;"><img src="images/classic 1 cover.jpg" height="200" width="200"><p style="font-size: larger; font: bold; background-color: antiquewhite;">CLASSIC</button></a></p></th>
+    <th><a href="hiphop.html"><button style="color: black; background-color: black;"><img src="images/hip hop cover.webp" height="200" width="250"><p style="font-size: larger; font: bold; background-color: antiquewhite;">HIP HOP</p></a></th>
+    <th><a href="pop music.html"><button style="color: black; background-color: black;"><img src="images/POP MUSIC COVER.jpg" height="200" width="200"><P style="font-size: larger; font: bold; background-color: antiquewhite;">POP MUSIC</P></a></th>
+    <th><a href="edm.html"><button style="color: black; background-color: black;"><img src="images/edm cover.jpg" height="200" width="200"><p style="font-size: larger; font: bold; background-color: antiquewhite;">EDM </p></a></th>
+
+  </table>
+</center>
+    
+<center>
+  <h1 style="font: bold italic small-caps 20px georgia;">OUR SPONSOR PARTNERS.</h1>
+  <img src="images/spotify logo.png" height="50"></a>
+  <img src="images/apple music logo.jpg" height="50">
+  <img src="images/soundcloud logo.jpg" height="50">
+  <img src="images/dolby logo.png" height="50">
+ </center>
+                    
+  <script>
+    let slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+    </script>
+                    
+                    
+        </body>
+    </head>
+</html>
